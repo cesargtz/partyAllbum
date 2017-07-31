@@ -1,0 +1,167 @@
+{% extends "home.html" %}
+
+{% block title %} Luis Corral {% endblock title %}
+{% block content %}
+
+
+    <header>
+        <div class="header-container">
+
+            <div class="header-inner">
+
+                <a href="#" class="close-btn">
+                    <span class="close"></span>
+                </a>
+                {% load static from staticfiles %}
+                <a href="index-2.html" class="logo-container">
+                    <img src="{% static 'img/logo.png' %}" alt="" >
+                </a>
+
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="index-2.html" class="active">HOME</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                GALLERY
+                                <span class="arrow-down icon1-angle-down"></span>
+                            </a>
+                            <ul>
+                                <li><a href="gallery-albums.html">ALBUMS</a></li>
+                                <li><a href="gallery-grid.html">GRID</a></li>
+                                <li><a href="gallery-masonry.html">MASONRY</a></li>
+                                <li><a href="gallery-slideshow.html">SLIDESHOW</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">
+                                PORTFOLIO
+                                <span class="arrow-down icon1-angle-down"></span>
+                            </a>
+                            <ul>
+                                <li><a href="portfolio-grid.html">GRID</a></li>
+                                <li><a href="portfolio-masonry.html">MASONRY</a></li>
+                                <li><a href="portfolio-striped.html">STRIPED</a></li>
+                                <li><a href="portfolio-single.html">SINGLE</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="page-about.html">ABOUT</a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                BLOG
+                                <span class="arrow-down icon1-angle-down"></span>
+                            </a>
+                            <ul>
+                                <li><a href="blog-fullwidth.html">FULLWIDTH</a></li>
+                                <li><a href="blog-left-sidebar.html">LEFT SIDEBAR</a></li>
+                                <li><a href="blog-right-sidebar.html">RIGHT SIDEBAR</a></li>
+                                <li><a href="blog-single-fullwidth.html">SINGLE FULLWIDTH</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="page-elements.html">ELEMENTS</a>
+                        </li>
+                        <li>
+                            <a href="page-contact.html">CONTACT</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="social-icons clearfix">
+                    <a href="#" class="icon3-facebook"></a>
+                    <a href="#" class="icon1-twitter"></a>
+                    <a href="#" class="icon3-instagram"></a>
+                </div>
+
+                <p class="copyrights">COPYRIGHT © CELINE</p>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div class="header-bar active">
+
+        <!-- <a href="#" class="menu-nav">
+            <span></span>
+        </a> -->
+
+        <div class="filter-mini gallery-masonry-filter">
+
+            <!-- <a href="#" class="filter"><img src="{% static 'img/filter.png' %}" alt=""></a> -->
+
+            <div class="categories">
+
+                <a href="#" data-filter="" class="cat-all active">All</a>
+                <a href="#" data-filter="cat-fashion">Fashion</a>
+                <a href="#" data-filter="cat-portraits">Portraits</a>
+                <a href="#" data-filter="cat-street">Street</a>
+
+            </div>
+
+        </div>
+
+        <!-- <a href="index-2.html" class="logo-mini"><img src="{% static 'img/logo-mini.png' %}" alt=""></a>
+
+        <a href="index-2.html" class="logo-mobile"><img src="{% static 'img/logo-mobile.png' %}" alt=""></a> -->
+
+        <div class="share-mini">
+
+            <a href="{% url 'main:upload' %}" class="show icon3-share"></a>
+
+            <div class="icons">
+
+                <a href="{% url 'main:upload' %}">Subir</a>
+                <!-- <a href="{% url 'main:upload' %}" class="icon3-facebook"></a> -->
+                <!-- <a href="#" class="icon1-twitter"></a>
+                <a href="#" class="icon3-instagram"></a> -->
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- End Header -->
+{% if user.username %}
+
+    <div class="gallery-masonry-h with-cover rows-3 clearfix">
+
+        <div class="container">
+
+            <div class="inner-container">
+
+                <div class="cat-wrapper" id="cat-fashion">
+
+
+                    <div class="images">
+
+                        {% for photography in photographys %}
+                            <div class="gallery-item animated regular" data-animation="fadeIn" data-animation-delay="200">
+                                <img src="{{ photography.image.url }}" alt="">
+                                <a href="{{ photography.image_full }}" class="overlay"></a>
+                                <!-- <a href="#" class="icon1-heart-empty"></a>
+                                <a href="#" class="icon1-heart"></a> -->
+                                <p class="love">47</p>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+
+            <!-- Aqui abajo va lo del delte.html -->
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+
+    <h1>  <a id="a-access" href="{% url 'users:login' %}">Acceso denegado, Favor de Ingresar la Contraseña ↺ </a></h1>
+
+
+{% endif %}
+
+{% endblock content %}
