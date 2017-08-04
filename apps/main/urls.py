@@ -6,5 +6,5 @@ urlpatterns = [
     url(r'^home$', HomeView.as_view(), name="home"),
     # url(r'^form$', views.FormView, name="form"),
     url(r'^upload$', UploadView.as_view(), name="upload"),
-    # url(r'^upload$', views.UploadView, name="upload"),
+    url(r'^download/(?P<url>\d+)$',views.Download, name="download"),
 ]

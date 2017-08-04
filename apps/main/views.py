@@ -40,3 +40,14 @@ class UploadView(FormView):
             return self.form_valid(form)
         else:
             return self.form_invalid(form)
+
+
+def Download(self,url):
+    path = Photography.objects.filter(id = url)
+    path_full = path[0].image_full
+    img = Image.open(path_full)
+    response = HttpResponse(content_type='image/jpg')
+    img.save(response, "JPEG")
+    name = path_full.split('/')
+    response['Content-Disposition'] = 'attachment; filename=%s' % (name[1])
+    return response

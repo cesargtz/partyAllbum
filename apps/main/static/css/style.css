@@ -627,11 +627,11 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
         }
         .header-bar .logo-mini {
             position: absolute;
-            top: 50%;
+            top: 45%;
             margin-top: -100%;
             left: 50%;
             margin-left: -10px;
-            width: 20px;
+            width: 30px;
             text-align: center;
         }
         .header-bar .logo-mobile {
@@ -777,7 +777,7 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
             }
             .gallery-masonry-h .images .gallery-item .icon1-heart-empty {
                 top: 50%;
-                left: 50%;
+                left: 45%;
                 margin-top: -16px;
                 margin-left: -16px;
                 position: absolute;
@@ -795,6 +795,30 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
                 -o-transition: all 0.2s 0.1s ease;
                 transition: all 0.2s 0.1s ease;
             }
+            .gallery-masonry-h .images .gallery-item .icon2-arrow-down{
+                top: 44%;
+                left: 53%;
+                border: 50px;
+                position: absolute;
+                font-size: 25.5px;
+                font-weight: bold;
+                color: rgba(0, 0, 0, 0);
+                z-index: 3;
+                -moz-transform: scale(0);
+                -webkit-transform: scale(0);
+                -o-transform: scale(0);
+                -ms-transform: scale(0);
+                transform: scale(0);
+                -webkit-transition: all 0.2s 0.1s ease;
+                -moz-transition: all 0.2s 0.1s ease;
+                -ms-transition: all 0.2s 0.1s ease;
+                -o-transition: all 0.2s 0.1s ease;
+                transition: all 0.2s 0.1s ease;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: white;
+
+            }
+
             .gallery-masonry-h .images .gallery-item:hover .overlay {
                 opacity: 0.7;
             }
@@ -805,9 +829,16 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
                 -ms-transform: scale(1);
                 transform: scale(1);
             }
+            .gallery-masonry-h .images .gallery-item:hover .icon2-arrow-down   {
+                -moz-transform: scale(1);
+                -webkit-transform: scale(1);
+                -o-transform: scale(1);
+                -ms-transform: scale(1);
+                transform: scale(1);
+            }
             .gallery-masonry-h .images .gallery-item .icon1-heart {
                 top: 50%;
-                left: 50%;
+                left: 45%;
                 margin-top: -16px;
                 margin-left: -16px;
                 position: absolute;
@@ -817,7 +848,7 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
             }
             .gallery-masonry-h .images .gallery-item .love {
                 top: 52%;
-                left: 50%;
+                left: 45%;
                 opacity: 0;
                 width: 26px;
                 margin-left: -13px;
@@ -1042,7 +1073,7 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
             }
             .gallery-grid .gallery-item .icon1-heart-empty {
                 top: 50%;
-                left: 50%;
+                left: 45%;
                 margin-top: -16px;
                 margin-left: -16px;
                 position: absolute;
@@ -1071,7 +1102,7 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
             }
             .gallery-grid .gallery-item .icon1-heart {
                 top: 50%;
-                left: 50%;
+                left: 45%;
                 margin-top: -16px;
                 margin-left: -16px;
                 position: absolute;
@@ -1961,7 +1992,7 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
         }
         .gallery-grid-2 .gallery-item .icon1-heart-empty {
             top: 50%;
-            left: 50%;
+            left: 45%;
             margin-top: -16px;
             margin-left: -16px;
             position: absolute;
@@ -1983,6 +2014,12 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
             margin-left: -13px;
             font-size: 26px;
         }
+        .gallery-grid-2.cols-4 .gallery-item .icon2-arrow-down    {
+            margin-top: -13px;
+            margin-left: -13px;
+            font-size: 26px;
+        }
+
         .gallery-grid-2 .gallery-item:hover .overlay {
             opacity: 0.7;
         }
@@ -1993,9 +2030,16 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
             -ms-transform: scale(1);
             transform: scale(1);
         }
+        .gallery-grid-2 .gallery-item:hover .icon2-arrow-down   {
+            -moz-transform: scale(1);
+            -webkit-transform: scale(1);
+            -o-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+        }
         .gallery-grid-2 .gallery-item .icon1-heart {
             top: 50%;
-            left: 50%;
+            left: 45%;
             margin-top: -16px;
             margin-left: -16px;
             position: absolute;
@@ -2005,7 +2049,7 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
         }
         .gallery-grid-2 .gallery-item .love {
             top: 52%;
-            left: 50%;
+            left: 45%;
             opacity: 0;
             width: 26px;
             margin-left: -13px;

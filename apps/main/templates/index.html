@@ -104,9 +104,9 @@
 
         </div>
 
-        <!-- <a href="index-2.html" class="logo-mini"><img src="{% static 'img/logo-mini.png' %}" alt=""></a>
+        <a href="index-2.html" class="logo-mini"><img src="{% static 'img/logo-mini.png' %}" alt=""></a>
 
-        <a href="index-2.html" class="logo-mobile"><img src="{% static 'img/logo-mobile.png' %}" alt=""></a> -->
+        <!-- <a href="index-2.html" class="logo-mobile"><img src="{% static 'img/logo-mobile.png' %}" alt=""></a> -->
 
         <div class="share-mini">
 
@@ -142,9 +142,10 @@
                             <div class="gallery-item animated regular" data-animation="fadeIn" data-animation-delay="200">
                                 <img src="{{ photography.image.url }}" alt="">
                                 <a href="{{ photography.image_full }}" class="overlay"></a>
-                                <!-- <a href="#" class="icon1-heart-empty"></a>
-                                <a href="#" class="icon1-heart"></a> -->
-                                <p class="love">47</p>
+                                <a href="{% url 'main:download' photography.id %}" class="icon2-arrow-down"></a>
+                                <a href="#" class="icon1-heart-empty"></a>
+                                <a href="#" class="icon1-heart"></a>
+                                <p class="love">0</p>
                             </div>
                         {% endfor %}
 
