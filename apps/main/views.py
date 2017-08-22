@@ -51,3 +51,12 @@ def Download(self,url):
     name = path_full.split('/')
     response['Content-Disposition'] = 'attachment; filename=%s' % (name[1])
     return response
+
+def Like(self,id):
+    obj = Photography.objects.filter(id = id)
+    if obj[0].likes:
+        like = obj[0].likes + 1
+    else:
+        like = 1
+    obj.update(likes = like)
+    return HttpResponse(status=204)

@@ -7,4 +7,5 @@ urlpatterns = [
     # url(r'^form$', views.FormView, name="form"),
     url(r'^upload$', UploadView.as_view(), name="upload"),
     url(r'^download/(?P<url>\d+)$',views.Download, name="download"),
+    url(r'^like/(?P<id>\d+)$',views.Like, name="like"),
 ]

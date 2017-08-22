@@ -143,9 +143,13 @@
                                 <img src="{{ photography.image.url }}" alt="">
                                 <a href="{{ photography.image_full }}" class="overlay"></a>
                                 <a href="{% url 'main:download' photography.id %}" class="icon2-arrow-down"></a>
-                                <a href="#" class="icon1-heart-empty"></a>
+                                <a class="icon1-heart-empty" href="{% url 'main:like' photography.id %}"></a>
                                 <a href="#" class="icon1-heart"></a>
-                                <p class="love">0</p>
+                                {% if photography.likes %}
+                                    <p class="love">{{ photography.likes }}</p>
+                                {% else %}
+                                    <p class="love">0</p>
+                                {% endif %}
                             </div>
                         {% endfor %}
 

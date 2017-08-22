@@ -12,6 +12,7 @@ class Photography(models.Model):
 
     image = models.FileField(upload_to="Gallery")   #upload_to significa que va a esa carpeta
     image_full = models.CharField(max_length=200)
+    likes = models.IntegerField()
 
     create_at = models.DateTimeField(auto_now_add=True) # Fecha de Cuando se creo
     updated_at = models.DateTimeField(auto_now=True) # Fecha de cuando se modifico
