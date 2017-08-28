@@ -97,7 +97,7 @@ USE_TZ = True
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['54.202.187.115','www.luiscorral.com','luiscorral.com']
+ALLOWED_HOSTS = ['54.202.187.115','www.luiscorral.com','luiscorral.com','localhost']
 
 
 

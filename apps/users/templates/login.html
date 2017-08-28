@@ -1,25 +1,364 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>
-            Login
-        </title>
-         {% load static from staticfiles %}
-        <link  rel="stylesheet" href="{% static 'css/stylelogin.css' %}" />
-    </head>
-    <body>
-        <img class="img-login" src="{% static 'img/logo_luis.png' %}" alt="" >
-        <div id="login">
-            <form method="POST">
-                {% csrf_token %}
-                <h2>Ingresar </h2>
-                {{ form.username }}
-                {{ form.username.errors }}
-                {{ form.password }}
-                {{ form.password.errors }}
-                <input class="button" type="submit" id="login-btn" value="Ok"/>
-            </form>
-        </div>
-    </body>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Login</title>
+
+   {% load static from staticfiles %}
+    <style>
+
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+.body{
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+  	top: -20px;
+  	left: -20px;
+  	right: -40px;
+  	bottom: -40px;
+  	width: auto;
+  	height: auto;
+  	background-image: url("{% static 'img/fire.jpg' %}");
+  	background-size: cover;
+  	-webkit-filter: blur(0px);
+
+}
+
+
+
+.header{
+	position: absolute;
+	top: calc(20% - 35px);
+	left: calc(25% - 255px);
+
+}
+
+.header div{
+	float: left;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 40px;
+	font-weight: 200;
+}
+
+.header div span{
+	color: #F29E20 !important;
+}
+
+.login{
+	position: absolute;
+	top: calc(20% - 75px);
+	left: calc(25% - 50px);
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+
+}
+
+.login input[type=text]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+}
+
+.login input[type=password]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login input[type=submit]{
+	width: 260px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login input[type=submit]:hover{
+	opacity: 0.8;
+}
+
+.login input[type=submit]:active{
+	opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=submit]:focus{
+	outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+@media screen and (max-width:640px) and (min-width:480px){
+  .body{
+    position: fixed;
+    overflow-y: scroll;
+    background-image: url("{% static 'img/fire.jpg' %}");
+    display:block;
+  	-webkit-filter: blur(0px);
+  }
+  .header{
+  	position: absolute;
+  	top: calc(50% - 35px);
+  	left: calc(50% - 155px);
+  }
+  .header div{
+  	float: left;
+  	color: #fff;
+  	font-family: 'Exo', sans-serif;
+  	font-size: 20px;
+  	font-weight: 150;
+  }
+  .login{
+  	position: absolute;
+  	top: calc(50% - 75px);
+  	left: calc(50% - 50px);
+  	height: 150px;
+  	width: 250px;
+  	padding: 10px;
+
+  }
+
+  .login input[type=text]{
+  	width: 180px;
+  }
+
+  .login input[type=password]{
+  	width: 180px;
+  	font-size: 14px;
+  	font-weight: 300;
+  }
+
+  .login input[type=submit]{
+  	width: 190px;
+  	font-size: 16px;
+  	font-weight: 300;
+  }
+
+}
+
+@media screen and (max-width:480px) and (min-width:320px)
+{
+  .body{
+    position: fixed;
+    overflow-y: scroll;
+    background-image: url("{% static 'img/fire_480.jpg' %}");
+    display:block;
+  	-webkit-filter: blur(0px);
+  }
+  .header{
+  	position: absolute;
+  	top: calc(38%);
+  	left: calc(50% - 50px);
+  }
+  .header div{
+  	float: left;
+  	color: #fff;
+  	font-family: 'Exo', sans-serif;
+  	font-size: 20px;
+  	font-weight: 150;
+  }
+  .login{
+  	position: absolute;
+  	top: calc(50% - 55px);
+  	left: calc(50% - 100px);
+  	height: 150px;
+  	width: 250px;
+  	padding: 10px;
+
+  }
+
+  .login input[type=text]{
+  	width: 180px;
+  }
+
+  .login input[type=password]{
+  	width: 180px;
+  	font-size: 14px;
+  	font-weight: 300;
+  }
+
+  .login input[type=submit]{
+  	width: 190px;
+  	font-size: 16px;
+  	font-weight: 300;
+  }
+}
+
+@media screen and (max-width:800px) and (min-width:640px){
+  .body{
+
+    position: fixed;
+    overflow-y: scroll;
+    background-image: url("{% static 'img/fire.jpg' %}");
+    display:block;
+    -webkit-filter: blur(0px);
+
+  }
+  .header{
+  	position: absolute;
+  	top: calc(20% - 35px);
+  	left: calc(45% - 255px);
+
+  }
+
+  .header div{
+  	font-size: 30px;
+  }
+
+  .login{
+  	position: absolute;
+  	top: calc(20% - 75px);
+  	left: calc(45% - 100px);
+  	height: 150px;
+  	width: 350px;
+  	padding: 10px;
+
+  }
+
+  .login input[type=text]{
+  	width: 200px;
+  	height: 30px;
+  	background: transparent;
+  	border: 1px solid rgba(255,255,255,0.6);
+  	border-radius: 2px;
+  	color: #fff;
+  	font-family: 'Exo', sans-serif;
+  	font-size: 16px;
+  	font-weight: 400;
+  	padding: 4px;
+  }
+
+  .login input[type=password]{
+  	width: 200px;
+
+  }
+
+  .login input[type=submit]{
+  	width: 211px;
+  }
+}
+
+@media screen and (max-width:1100px) and (min-width:800px){
+  .body{
+
+    position: fixed;
+    overflow-y: scroll;
+    background-image: url("{% static 'img/fire.jpg' %}");
+    display:block;
+    -webkit-filter: blur(0px);
+
+  }
+  .header{
+  	position: absolute;
+  	top: calc(20% - 35px);
+  	left: calc(30% - 255px);
+
+  }
+
+  .header div{
+  	font-size: 30px;
+  }
+
+  .login{
+  	position: absolute;
+  	top: calc(20% - 75px);
+  	left: calc(30% - 100px);
+  	height: 150px;
+  	width: 350px;
+  	padding: 10px;
+
+  }
+
+  .login input[type=text]{
+  	width: 200px;
+  	height: 30px;
+  	background: transparent;
+  	border: 1px solid rgba(255,255,255,0.6);
+  	border-radius: 2px;
+  	color: #fff;
+  	font-family: 'Exo', sans-serif;
+  	font-size: 16px;
+  	font-weight: 400;
+  	padding: 4px;
+  }
+
+  .login input[type=password]{
+  	width: 200px;
+
+  }
+
+  .login input[type=submit]{
+  	width: 211px;
+  }
+}
+</style>
+
+
+
+</head>
+
+<body >
+<!-- oncontextmenu="return false" -->
+  <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>Swift<span>Night</span></div>
+		</div>
+		<br>
+    <div class="login" id="login">
+    		<form method="POST">
+            {% csrf_token %}
+            {{ form.username }}
+            {{ form.username.errors }}
+            {{ form.password }}
+            {{ form.password.errors }}
+            <input type="submit" id="login-btn" value="Entrar"/>
+        </form>
+		</div>
+</body>
 </html>
