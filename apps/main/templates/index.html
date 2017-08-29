@@ -1,6 +1,6 @@
 {% extends "home.html" %}
 
-{% block title %} Luis Corral {% endblock title %}
+{% block title %} SwiftNight {% endblock title %}
 {% block content %}
 
 
@@ -84,14 +84,14 @@
     </header>
 
     <div class="header-bar active">
+         <a href="{% url 'main:upload' %}" class="menu-nav">
+           <p id="arrowUp">
+             Ꙟ
+           </p>
+        </a>
+      <!--  <div class="filter-mini gallery-masonry-filter">
 
-        <!-- <a href="#" class="menu-nav">
-            <span></span>
-        </a> -->
-
-        <div class="filter-mini gallery-masonry-filter">
-
-            <!-- <a href="#" class="filter"><img src="{% static 'img/filter.png' %}" alt=""></a> -->
+             <a href="#" class="filter"><img src="{% static 'img/filter.png' %}" alt=""></a>
 
             <div class="categories">
 
@@ -102,11 +102,11 @@
 
             </div>
 
-        </div>
+        </div> -->
 
         <a href="index-2.html" class="logo-mini"><img src="{% static 'img/logo-mini.png' %}" alt=""></a>
 
-        <!-- <a href="index-2.html" class="logo-mobile"><img src="{% static 'img/logo-mobile.png' %}" alt=""></a> -->
+        <a href="index-2.html" class="logo-mobile"><img src="{% static 'img/logo-night.png' %}" alt=""></a>
 
         <div class="share-mini">
 

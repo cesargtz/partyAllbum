@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Upload Photography
+        </title>
+         {% load static from staticfiles %}
+        <link  rel="stylesheet" href="{% static 'css/stylelogin.css' %}" />
+    </head>
+    <body>
+        {% if user.username %}
+        <img src="{% static 'img/logo_luis.png' %}" alt="" >
+        <div id="login">
+            <form method="POST" action="upload" enctype="multipart/form-data"> {% csrf_token %}
+                <h2>Subir Fotos</h2>
+                {{ form.image }}
+                {{ form.image.errors }}
+                {# <input type="file" name="files" multiple />#}
+                <input class="button" type="submit" id="login-btn" value="Subir"/>
+                <p class="text">
+                    *Al finalizar la carga será redirigido a la pagina de inicio.
+                </p>
+            </form>
+        </div>
+        {% else %}
+        <h1 class="title">Acceso Denegado</h1>
+        {% endif%}
+    </body>
+</html>

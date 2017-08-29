@@ -110,13 +110,13 @@ $(document).ready(function() {
 	});
 
 	// =========== Header Buttons ===========
-	$("header .close-btn, .header-bar .menu-nav").click(function(event) {
-
-		event.preventDefault();
-
-		$("header, .header-bar").toggleClass('active');
-		$("body").toggleClass('menu-visible');
-	});
+	// $("header .close-btn, .header-bar .menu-nav").click(function(event) {
+	//
+	// 	event.preventDefault();
+	//
+	// 	$("header, .header-bar").toggleClass('active');
+	// 	$("body").toggleClass('menu-visible');
+	// });
 
 	$(".filter-mini .filter").click(function(event) {
 

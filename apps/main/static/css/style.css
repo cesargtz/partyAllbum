@@ -27,6 +27,8 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
 ============================================================================================================================================
 ============================================================================================================================================*/
 
+
+
     @font-face {
         font-family: 'montserrat_regular';
         src: url('../includes/font/Regular/montserrat-regular-webfont.eot');
@@ -374,6 +376,20 @@ Author URL: http://themeforest.net/user/codesymbol/portfolio
 	4.Menu Setup
 ============================================================================================================================================
 ============================================================================================================================================*/
+#arrowUp{
+    display: none;
+  }
+@media screen and (max-width:770px){
+  #arrowUp{
+      position: relative;
+      color:gray;
+      font-size: 1.6em;
+      bottom: 50%;
+      right: 10px;
+      display: block;
+    }
+}
+
 
     /*Basic*/
         header {
