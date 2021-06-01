@@ -24,7 +24,7 @@ python-resize-image==1.1.11
 pytz==2017.2
 requests==2.18.1
 six==1.4.1
-urllib3==1.21.1
+urllib3==1.26.5
 virtualenv==15.1.0
 xattr==0.6.4
 zope.interface==4.4.2
