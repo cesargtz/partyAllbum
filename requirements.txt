@@ -14,7 +14,7 @@ meld3==1.0.2
 modulegraph==0.10.4
 numpy==1.13.1
 olefile==0.44
-Pillow==4.2.1
+Pillow==8.2.0
 psycopg2==2.7.1
 py2app==0.7.3
 pycparser==2.18
